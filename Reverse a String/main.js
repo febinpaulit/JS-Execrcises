@@ -23,8 +23,17 @@ function reverse2(str){
     return str.split('').reverse().join('');
 }
 
+
+function reverseStringRecursive(str) {
+    if (str.length <= 1) {
+        return str;  // Base case: a single character or empty string is its own reverse
+    }
+    console.log(str.slice(1),' - ',str[0]);
+    return reverseStringRecursive(str.slice(1)) + str[0]; // Recursive case
+}
 const reverse3 = str =>[...str].reverse().join('');
 
-console.log(reverse('Hi My name is Febin'));
-console.log(reverse2('Hi My name is Febin'));
-console.log(reverse3('Hi My name is Febin'));
+// console.log(reverse('Hi My name is Febin'));
+// console.log(reverse2('Hi My name is Febin'));
+// console.log(reverse3('Hi My name is Febin'));
+console.log(reverseStringRecursive('Hi My name is Febin'));
